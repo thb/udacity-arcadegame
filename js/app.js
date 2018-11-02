@@ -23,8 +23,10 @@ GridUtils.positionXOfColumn = function(int) {
 };
 GridUtils.printMessage = function(message) {
   let messageEl = document.querySelector(".message");
-  if (null === messageEl) messageEl = document.createElement("p");
-  messageEl.classList.add("message");
+  if (null === messageEl) {
+    messageEl = document.createElement("p");
+    messageEl.classList.add("message");
+  }
   messageEl.innerText = message;
   document.body.appendChild(messageEl);
   window.setTimeout(function() {
