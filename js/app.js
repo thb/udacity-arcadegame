@@ -90,8 +90,6 @@ function Player() {
   this.x = GridUtils.positionXOfColumn(2);
 }
 
-Player.prototype.update = function(dt) {};
-
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
