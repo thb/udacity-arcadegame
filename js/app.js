@@ -26,9 +26,9 @@ GridUtils.printMessage = function(message) {
   if (null === messageEl) {
     messageEl = document.createElement("p");
     messageEl.classList.add("message");
+    document.body.appendChild(messageEl);
   }
   messageEl.innerText = message;
-  document.body.appendChild(messageEl);
   window.setTimeout(function() {
     messageEl.innerText = "";
   }, 1500);
