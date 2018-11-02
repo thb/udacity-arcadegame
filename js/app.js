@@ -18,9 +18,11 @@ GridUtils.getRandomInt = function(max) {
 GridUtils.positionYOfRow = function(int) {
   return int * GridUtils.CELL_HEIGHT - GridUtils.Y_CORRECTING_FACTOR;
 };
+
 GridUtils.positionXOfColumn = function(int) {
   return int * GridUtils.CELL_WIDTH;
 };
+
 GridUtils.printMessage = function(message) {
   let messageEl = document.querySelector(".message");
   if (null === messageEl) {
@@ -37,7 +39,7 @@ GridUtils.printMessage = function(message) {
 // Checks if an enemy and the player are in collision
 // the y coordinate is allways the same
 // the x coorinate must be included between -20 and +20
-// as enemy speed might let the x coordinate be
+// as enemy speed might not let the x coordinate be
 // exactly the same for the player and the enemy
 GridUtils.collision = function(enemy, player) {
   if (
