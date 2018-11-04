@@ -37,19 +37,13 @@ GridUtils.printMessage = function(message) {
 };
 
 // Checks if an enemy and the player are in collision
-// the y coordinate is allways the same
-// the x coorinate must be included between -20 and +20
-// as enemy speed might not let the x coordinate be
-// exactly the same for the player and the enemy
+// Used pseudocode provided at https://gamedev.stackexchange.com/questions
+// /586/what-is-the-fastest-way-to-work-out-2d-bounding-box-intersection
 GridUtils.collision = function(enemy, player) {
-  if (
-    enemy.y == player.y &&
-    (enemy.x - 20 <= player.x && player.x <= enemy.x + 20)
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  return (
+    Math.abs(enemy.x - player.x) * 2 < GridUtils.CELL_WIDTH * 2 &&
+    Math.abs(enemy.y - player.y) * 2 < GridUtils.CELL_HEIGHT * 2
+  );
 };
 
 // Enemies our player must avoid
